@@ -167,7 +167,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#2c6693"
+        active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
         //
@@ -197,7 +197,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 2
+        width 4
         active-color "#ffc87f"
         inactive-color "#505050"
 
@@ -270,8 +270,6 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "~/.config/niri/scripts/idle.sh"
-
-
 // for bluetooth
 spawn-at-startup "blueman-applet"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -279,7 +277,7 @@ spawn-at-startup "blueman-applet"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    skip-at-startup
+    // skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -345,7 +343,7 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-window-rule {
+/-window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
@@ -403,7 +401,7 @@ binds {
     Mod+O repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
-    
+
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
@@ -579,10 +577,7 @@ binds {
 
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
-    
-    //hot-reloading DankShell:
 
-    Mod+Shift+Escape { spawn "dms" "restart"; }
     // Finer width adjustments.
     // This command can also:
     // * set width in pixels: "1000"
@@ -606,7 +601,6 @@ binds {
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
     Mod+W { toggle-column-tabbed-display; }
-    //
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
@@ -652,4 +646,3 @@ include "dms/cursor.kdl"
 include "dms/windowrules.kdl"
 
 include "dms/outputs.kdl"
-include "dms/binds.kdl"
